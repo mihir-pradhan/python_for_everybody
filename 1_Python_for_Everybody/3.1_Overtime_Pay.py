@@ -8,6 +8,7 @@ try:
     rate = float(rate)
 except:
     print("Error, please enter numeric input")
+    quit()
 
 if (hours > 40):
     regular_pay = rate * 40
