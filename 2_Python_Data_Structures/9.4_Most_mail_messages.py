@@ -17,19 +17,18 @@ for line in handle:
     if len(line) < 2 or line[0] != 'From':
         continue
     else:
-        email = line[1]
-        emails.append(email)
+        emails.append(line[1])
 
-email_dict = {}
+email_dict = dict()
 
 for email in emails:
     email_dict[email] = email_dict.get(email, 0) + 1
 
 most_email = None
-most_count = None
+most_count = -1
 
 for email, count in email_dict.items():
-    if most_count is None or count > most_count:
+    if count > most_count:
         most_email = email
         most_count = count
 
