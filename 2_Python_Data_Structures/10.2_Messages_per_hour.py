@@ -12,13 +12,14 @@ if len(name) < 1:
 handle = open(name)
 
 list_hours = list()
+
 for line in handle:
     words = line.split()
     if len(words) < 2 or words[0] != 'From':
         continue
     list_hours.append(words[5].split(':')[0])
 
-hours_dict = {}
+hours_dict = dict()
 
 for hour in list_hours:
     hours_dict[hour] = hours_dict.get(hour, 0) + 1
